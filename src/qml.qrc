@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>qml/Card.qml</file>
+        <file>qml/CardGrid.qml</file>
+		<file>js/PopulateCardGrid.js</file>
+    </qresource>
+
+</RCC>

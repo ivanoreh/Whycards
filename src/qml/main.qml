@@ -48,12 +48,18 @@ ApplicationWindow
 
     Rectangle
     {
+        id: cards_area
         color: "red"
         height: parent.height * 0.95
         width:  parent.width * 0.98
         anchors.centerIn: parent
 
         radius: 10
+
+        CardGrid
+        {
+
+        }
     }
 
     Component.onCompleted:
