@@ -68,7 +68,7 @@ Rectangle
                 left: parent.left
                 leftMargin: margin
                 top: cardImage.bottom
-                topMargin: margin*2
+                topMargin: margin
                 bottom: parent.bottom
                 bottomMargin: margin
             }
