@@ -3,7 +3,8 @@ TEMPLATE = app
 QT += qml quick widgets
 
 SOURCES += src/main.cpp \
-    src/conf.cpp
+    src/conf.cpp \
+    src/fileservice.cpp
 
 RESOURCES += src/qml.qrc \
     src/assets.qrc
@@ -28,4 +29,5 @@ DISTFILES += \
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
 HEADERS += \
-    src/conf.h
+    src/conf.h \
+    src/fileservice.h

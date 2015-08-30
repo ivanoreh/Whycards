@@ -6,7 +6,8 @@
 #include <QVariant>
 #include <QObject>
 
-class Config : public QObject{
+class Config : public QObject
+{
     Q_OBJECT
 
 public:
@@ -21,6 +22,8 @@ public:
 
     Q_INVOKABLE void set (QString &key, QString value);
     Q_INVOKABLE auto get (QString &key);
+
+    Q_INVOKABLE QString getFileF();
 
 private:
 

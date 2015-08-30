@@ -64,6 +64,7 @@ ApplicationWindow
 
     Component.onCompleted:
     {
-        console.log("Screen: ", Screen.desktopAvailableHeight, Screen.desktopAvailableWidth, config.getLanguage() )
+        console.log("Screen: ", Screen.desktopAvailableHeight, Screen.desktopAvailableWidth )
+        //console.log(fileService.getImage());
     }
 }
