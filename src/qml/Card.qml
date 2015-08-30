@@ -82,13 +82,14 @@ Rectangle
                 flickableDirection: Flickable.VerticalFlick
                 clip: true
 
-                Text
+                TextEdit
                 {
                     id: cardText
                     //anchors.fill: cardTextArea
                     width: cardTextArea.width
-                    wrapMode: Text.WordWrap
-                    horizontalAlignment: Text.horizontalAlignment
+                    wrapMode: TextEdit.WordWrap
+                    horizontalAlignment: TextEdit.horizontalAlignment
+                    readOnly: true
                     text: txt
 
                     font.pointSize: 12

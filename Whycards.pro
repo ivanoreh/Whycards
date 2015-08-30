@@ -2,11 +2,13 @@ TEMPLATE = app
 
 QT += qml quick widgets
 
-SOURCES += src/main.cpp
+SOURCES += src/main.cpp \
+    src/conf.cpp
 
 RESOURCES += src/qml.qrc \
     src/assets.qrc
-CONFIG += c++11
+
+CONFIG += c++14
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -24,3 +26,6 @@ DISTFILES += \
     android/gradlew.bat
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+
+HEADERS += \
+    src/conf.h
