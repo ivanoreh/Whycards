@@ -3,5 +3,8 @@
         <file>../assets/sombrero1.jpg</file>
         <file>../assets/sombrero2.jpeg</file>
         <file>../assets/sombrero3.jpg</file>
+        <file>../assets/ic_add_circle_outline_black_24dp.png</file>
+        <file>../assets/ic_chevron_left_black_24dp.png</file>
+        <file>../assets/ic_chevron_right_black_24dp.png</file>
     </qresource>
 </RCC>

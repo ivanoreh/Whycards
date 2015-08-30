@@ -72,7 +72,22 @@ ApplicationWindow
 
     ImageSelector
     {
+        id: imageSelector
+        opacity : 0;
+        visible: false;
+    }
 
+    ActionBar
+    {
+        id: actionBar
+    }
+
+    Keys.onReleased: {
+        if (event.key == Qt.Key_Back) {
+            console.log("Back button captured - wunderbar !")
+            event.accepted = true;
+            imageSelector.hide();
+        }
     }
 
     Component.onCompleted:

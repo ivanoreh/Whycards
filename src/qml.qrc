@@ -6,5 +6,6 @@
         <file>js/PopulateCardGrid.js</file>
         <file>qml/ImageSelector.qml</file>
         <file>js/ImageSelectorBack.js</file>
+        <file>qml/ActionBar.qml</file>
     </qresource>
 </RCC>

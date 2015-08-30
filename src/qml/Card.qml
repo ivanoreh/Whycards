@@ -17,6 +17,8 @@ Rectangle
         id: card
 
         property bool selected: false
+        property int clickedTimes : 0
+
         height: marginArea.height - margin
         width: marginArea.width - margin
 
@@ -32,7 +34,12 @@ Rectangle
         MouseArea
         {
             anchors.fill: parent
-            onClicked: { parent.color = 'green' }
+            onClicked:
+            {
+                parent.clickedTimes++;
+                parent.color = parent.clickedTimes % 2  == 1? "green" : "white";
+                console.log("clicked times", parent.clickedTimes)
+            }
         }
 
         Image

@@ -4,8 +4,10 @@ import "../js/ImageSelectorBack.js" as Backend
 Rectangle {
     id: imageSelectorList
     width: cards_area.width * 0.9
-    height: cards_area.height * 0.9
+    height: cards_area.height * 0.85
     anchors.centerIn: cards_area
+
+
     color: "transparent"
 
     z : 1000
@@ -13,11 +15,13 @@ Rectangle {
     function show()
     {
         this.opacity  = 1;
+        this.visible = true;
     }
 
     function hide( url )
     {
         this.opacity = 0;
+        this.visible = false;
         selectedImg( url );
     }
 
@@ -25,7 +29,7 @@ Rectangle {
     {
         NumberAnimation
         {
-            duration: 500
+            duration: 250
         }
     }
 
