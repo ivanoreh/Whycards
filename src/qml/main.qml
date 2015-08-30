@@ -11,6 +11,14 @@ ApplicationWindow
     height: Screen.desktopAvailableHeight
     visible: true
 
+    signal selectedImg( string url )
+
+    onSelectedImg:
+    {
+        cardGrid.addCard( url , "novo");
+        cardGrid.goToEnd();
+    }
+
     menuBar: MenuBar
     {
         Menu
@@ -58,7 +66,7 @@ ApplicationWindow
 
         CardGrid
         {
-
+            id: cardGrid
         }
     }
 

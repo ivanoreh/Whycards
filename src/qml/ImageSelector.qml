@@ -6,9 +6,28 @@ Rectangle {
     width: cards_area.width * 0.9
     height: cards_area.height * 0.9
     anchors.centerIn: cards_area
-    color: "white"
+    color: "transparent"
 
     z : 1000
+
+    function show()
+    {
+        this.opacity  = 1;
+    }
+
+    function hide( url )
+    {
+        this.opacity = 0;
+        selectedImg( url );
+    }
+
+    Behavior on opacity
+    {
+        NumberAnimation
+        {
+            duration: 500
+        }
+    }
 
     ListModel
     {
@@ -37,20 +56,38 @@ Rectangle {
                 anchors
                 {
                     top : parent.top
-                    topMargin : 3
+                    topMargin : 5
                     bottom : parent.bottom
-                    bottomMargin : 3
+                    bottomMargin : 5
                     left : parent.left
-                    leftMargin : 3
+                    leftMargin : 5
                 }
 
                 fillMode: Image.PreserveAspectFit
                 asynchronous: true
                 mipmap: true
+                cache: true
 
                 source: type == "Img" ?
                             "file://" + fileService.getCurrDir() + "/" + url :
                             "";
+
+                Rectangle
+                {
+                    anchors
+                    {
+                        top: parent.bottom
+                        //left: imageSelectorList.left
+                    }
+
+                    color: imageSelectorListItemImg.progress < 1.0 ? "red" : "green";
+                    width: imageSelectorList.width * imageSelectorListItemImg.progress;
+                    height: 9
+
+                    visible: parent.progress < 1? true: false;
+
+                }
+
             }
 
             Text
@@ -86,7 +123,7 @@ Rectangle {
 
                     else
                     {
-                        //some signal and collapse
+                        imageSelectorList.hide("file://" + fileService.getCurrDir() + "/" + url );
                     }
                 }
             }

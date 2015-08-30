@@ -7,6 +7,21 @@ Rectangle
     height: cards_area.height
     id: cardGridareea
 
+    function addCard( url, txt)
+    {
+        cardModel.append(
+                    {
+                        source: url,
+                        text: txt
+                    }
+                    );
+    }
+
+    function goToEnd()
+    {
+        cardGrid.positionViewAtEnd();
+    }
+
     ListModel
     {
         id: cardModel
