@@ -31,3 +31,4 @@ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 HEADERS += \
     src/conf.h \
     src/fileservice.h
+

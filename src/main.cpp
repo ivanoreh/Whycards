@@ -13,6 +13,8 @@ int main(int argc, char *argv[])
     Config config;
     FileService fs;
 
+
+
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("config", &config);
     engine.rootContext()->setContextProperty("fileService", &fs);

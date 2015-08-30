@@ -12,6 +12,7 @@ android-no-sdk {
     }
     export(target.path)
     INSTALLS += target
+    QT += androidextras
 } else:unix {
     isEmpty(target.path) {
         qnx {

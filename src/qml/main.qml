@@ -62,9 +62,14 @@ ApplicationWindow
         }
     }
 
+    ImageSelector
+    {
+
+    }
+
     Component.onCompleted:
     {
         console.log("Screen: ", Screen.desktopAvailableHeight, Screen.desktopAvailableWidth )
-        //console.log(fileService.getImage());
+
     }
 }

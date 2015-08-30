@@ -3,7 +3,8 @@
         <file>qml/main.qml</file>
         <file>qml/Card.qml</file>
         <file>qml/CardGrid.qml</file>
-		<file>js/PopulateCardGrid.js</file>
+        <file>js/PopulateCardGrid.js</file>
+        <file>qml/ImageSelector.qml</file>
+        <file>js/ImageSelectorBack.js</file>
     </qresource>
-
 </RCC>

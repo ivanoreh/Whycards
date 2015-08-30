@@ -1,9 +1,14 @@
 #include"fileservice.h"
 #include<QFileDialog>
+#include<QProcess>
+#include<QDebug>
+#include<QDirIterator>
+#include<QDir>
+#include <QJsonObject>
 
 FileService::FileService()
 {
-
+    curr_dir = QDir("/");
 }
 
 FileService::~FileService()
@@ -11,28 +16,55 @@ FileService::~FileService()
 
 }
 
-QString FileService::getDefault(QVector<QString> &prefixes)
+QString FileService::getCurrDir(  )
 {
-    QString prefix = ")";
-
-    for( int i = 0; i < prefixes.size(); i++)
-        prefix += "*." +prefixes[i] + " ";
-
-    prefix += ")";
-
-    //TODO
-    return "";
+    QString ret = curr_dir.absolutePath();
+    qDebug() << "Curr absolute path" << ret;
+    return ret;
 }
 
-QString FileService::getImage()
+QJsonObject FileService::getDir( QString path )
 {
-    auto fileName = QFileDialog::getOpenFileName(
-                nullptr,
-                tr("Open Image"),
-                "/",
-                tr("Image Files (*.png *.jpg *.bmp)")
-                );
 
+    QJsonObject ret;
+    curr_dir.cd( path );
 
-    return fileName;
+        foreach(QFileInfo item, curr_dir.entryInfoList() )
+        {
+            if(item.isDir())
+            {
+                //qDebug() << "Dir: " << item.absoluteFilePath();
+                ret.insert( item.fileName(), "Dir");
+            }
+
+            else if(item.isFile())
+            {
+                //qDebug() << "File: " << item.absoluteFilePath();
+                QString title = item.fileName();
+                QString ending = "";
+
+                for( int i = title.length() -1; i >= 0 ; i--)
+                {
+                    if( title[i] != '.' )
+                        ending.prepend( title[i] );
+
+                    else
+                        break;
+                }
+
+                //qDebug() << ending << "ENGING";
+
+                if( ending.compare("png") == 0
+                        || ending.compare("jpg") == 0
+                        || ending.compare("jpeg") == 0
+                        || ending.compare("tif") == 0
+                  )
+                    ret.insert( title,  "Img");
+            }
+
+        }
+
+    return ret;
 }
+
+

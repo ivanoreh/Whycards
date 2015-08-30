@@ -2,6 +2,8 @@
 #define FILESERVICE_H
 
 #include <QObject>
+#include <QDir>
+#include <QJsonObject>
 
 class FileService: public QObject
 {
@@ -12,11 +14,12 @@ public:
     FileService();
     ~FileService();
 
-    Q_INVOKABLE QString getDefault( QVector<QString> &prefixes );
-    Q_INVOKABLE QString getImage();
+    Q_INVOKABLE QString getCurrDir(  );
+    Q_INVOKABLE QJsonObject getDir( QString path);
 
 
 private:
+    QDir curr_dir;
 
 };
 #endif // FILESERVICE_H
